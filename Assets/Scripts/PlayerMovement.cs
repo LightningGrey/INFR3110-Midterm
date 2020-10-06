@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementScript : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,19 +15,19 @@ public class MovementScript : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(new Vector3(0.0f, 0.0f, 5f * Time.deltaTime));
+            transform.Translate(new Vector3(0.0f, 0.0f, 3f * Time.deltaTime));
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(new Vector3(-5f * Time.deltaTime, 0.0f, 0.0f));
+            transform.Translate(new Vector3(-3f * Time.deltaTime, 0.0f, 0.0f));
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(new Vector3(0.0f, 0.0f, -5f * Time.deltaTime));
+            transform.Translate(new Vector3(0.0f, 0.0f, -3f * Time.deltaTime));
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(new Vector3(5f * Time.deltaTime, 0.0f, 0.0f));
+            transform.Translate(new Vector3(3f * Time.deltaTime, 0.0f, 0.0f));
         }
     }
 }
