@@ -5130,7 +5130,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!95 &488110663 stripped
@@ -5138,6 +5138,20 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 9500000, guid: ffaf641b210f5ea41952cf36f1379d66, type: 3}
   m_PrefabInstance: {fileID: 1790393945}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &488110664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488110659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b2b81e8aa52ca4e9915b2db5dcbee7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 488110662}
+  anim: {fileID: 488110663}
 --- !u!1 &660473349
 GameObject:
   m_ObjectHideFlags: 0
@@ -5282,7 +5296,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: b31c62c35ced11c4383176ecffe930c9, type: 3}
 --- !u!1001 &953123654
@@ -5375,7 +5389,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: b31c62c35ced11c4383176ecffe930c9, type: 3}
 --- !u!1 &963194225
@@ -5456,7 +5470,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.2, y: 4.5, z: -0.44}
+  m_LocalPosition: {x: 0, y: 4.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5474,6 +5488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74315a4a2e491b248827327486b9326b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 488110662}
 --- !u!1 &1014658979
 GameObject:
   m_ObjectHideFlags: 0
@@ -5834,15 +5849,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400040, guid: ffaf641b210f5ea41952cf36f1379d66, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400040, guid: ffaf641b210f5ea41952cf36f1379d66, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400040, guid: ffaf641b210f5ea41952cf36f1379d66, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400040, guid: ffaf641b210f5ea41952cf36f1379d66, type: 3}
       propertyPath: m_LocalRotation.x
@@ -5891,7 +5906,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1955033178}
-  - component: {fileID: 1955033177}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Untagged
@@ -5899,20 +5913,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1955033177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1955033176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aab141e2053b32347ac2b91272a5a50b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 488110663}
-  moveFlag: 0
 --- !u!4 &1955033178
 Transform:
   m_ObjectHideFlags: 0
