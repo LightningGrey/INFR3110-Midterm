@@ -6,6 +6,7 @@ public class Checkpoint : MonoBehaviour
 {
     public DeathPlane deathPlane;
     public ParticleSystem particles;
+    private bool isActivated = false;
     ParticleSystem.MainModule main;
     public void Awake()
     {
@@ -16,6 +17,10 @@ public class Checkpoint : MonoBehaviour
     {
         main.startColor = Color.green;
         deathPlane.checkpoint = gameObject;
+        //if (!isActivated)
+        //{
+        //
+        //}
     }
 
     private void OnTriggerExit()
