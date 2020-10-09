@@ -6,7 +6,7 @@ using Unity.Profiling;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class WallMovement : MonoBehaviour
+public class WallFloorMovement : MonoBehaviour
 {
     //direction
     //negative or positive;
@@ -27,9 +27,9 @@ public class WallMovement : MonoBehaviour
     private bool isHorizontal = true;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (counter >= timer) { 
+        if (counter > timer) { 
             move = -move;
             counter = 0.0f;
         } else
