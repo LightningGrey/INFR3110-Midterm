@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //rigidbody movement
         movement = new Vector3 (Input.GetAxis("Horizontal"), 
             0.0f, Input.GetAxis("Vertical"));
         movement = Vector3.ClampMagnitude(movement, 1.0f);

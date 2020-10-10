@@ -11,6 +11,7 @@ using System.IO;
 
 public class Checkpoint : MonoBehaviour
 {
+    //DLL info
     const string DLL_NAME = "INFR3110 - Midterm DLL";
 
     [DllImport(DLL_NAME)]
@@ -61,7 +62,7 @@ public class Checkpoint : MonoBehaviour
     }
 
 
-
+    //other game objects
     public DeathPlane deathPlane;
     public ParticleSystem particles;
     ParticleSystem.MainModule main;
@@ -73,6 +74,7 @@ public class Checkpoint : MonoBehaviour
     private Font arial;
     private int checkpointCounter = 1;
     
+    //bools
     private bool isActivated = false;
     [SerializeField]
     private bool isFirst = false;
@@ -83,6 +85,8 @@ public class Checkpoint : MonoBehaviour
     public void Awake()
     {
         main = particles.GetComponent<ParticleSystem>().main;
+        
+        //time when entering 
         lastTime = Time.time;
 
         //load font
@@ -93,10 +97,14 @@ public class Checkpoint : MonoBehaviour
     {
         main.startColor = Color.green;
         deathPlane.checkpoint = gameObject;
+
+        //checkpoints between first and last
+        //starting checkpoint not counted
         if (!isActivated && !isFirst && !isLast)
         {
             float currentTime = Time.time;
             float checkpointTime = currentTime - lastTime;
+            //send checkpoint time to next checkpoint
             nextPoint.lastTime = currentTime;
 
             checkpointMarker.color = Color.green;
@@ -110,16 +118,17 @@ public class Checkpoint : MonoBehaviour
             myText.font = arial;
             myText.color = Color.black;
 
+            //send checkpoint counter to next checkpoint
             nextPoint.checkpointCounter = checkpointCounter + 1;
+            //activate checkpoint, times only count first time touching checkpoint
             isActivated = true;
         }
 
+        //last checkpoint, game complete
         if (isLast)
         {
             float currentTime = Time.time;
             float checkpointTime = currentTime - lastTime;
-            Debug.Log(currentTime);
-            Debug.Log(checkpointTime);
 
             checkpointMarker.color = Color.green;
 

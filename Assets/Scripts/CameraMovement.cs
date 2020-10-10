@@ -9,15 +9,10 @@ public class CameraMovement : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     private Vector3 offset = new Vector3(0.0f, 4.5f, 0.0f);
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     { 
+        //camera follows player
         targetPos = player.transform.position + offset;
         transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, 0.01f);
     }

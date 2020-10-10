@@ -29,6 +29,7 @@ public class WallFloorMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        //reverses move and resets counter once one end is reached
         if (counter > timer) { 
             move = -move;
             counter = 0.0f;
