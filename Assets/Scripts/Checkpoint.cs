@@ -83,7 +83,7 @@ public class Checkpoint : MonoBehaviour
     public void Awake()
     {
         main = particles.GetComponent<ParticleSystem>().main;
-        lastTime = Time.timeSinceLevelLoad;
+        lastTime = Time.time;
 
         //load font
         arial = (Font)Resources.GetBuiltinResource(typeof(Font), "Arial.ttf");
@@ -118,21 +118,25 @@ public class Checkpoint : MonoBehaviour
         {
             float currentTime = Time.time;
             float checkpointTime = currentTime - lastTime;
-            nextPoint.lastTime = currentTime;
+            Debug.Log(currentTime);
+            Debug.Log(checkpointTime);
 
             checkpointMarker.color = Color.green;
 
             SaveTimeTest(checkpointTime);
 
             //write to file
-            string file = "Assets/Times.txt";
+            if (File.Exists("Assets/Resources/Times.txt"))
+            {
+                File.Delete("Assets/Resources/Times.txt");
+            }
+            string file = "Assets/Resources/Times.txt";
 
-            StreamWriter writer = new StreamWriter(file, true);
+            StreamWriter writer = new StreamWriter(file);
 
             for (int i = 0; i <= 4; i++)
             {
                 writer.WriteLine(LoadTimeTest(i));
-                writer.WriteLine("\n");
             }
             writer.WriteLine(LoadTotalTimeTest());
             writer.Close();
@@ -149,6 +153,7 @@ public class Checkpoint : MonoBehaviour
 
     void OnDestroy()
     {
+        
         ResetLoggerTest();
     }
 }

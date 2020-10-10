@@ -39336,7 +39336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathPlane: {fileID: 59979264}
   particles: {fileID: 694054}
-  nextPoint: {fileID: 1067729859}
+  nextPoint: {fileID: 0}
   checkpointMarker: {fileID: 1269664518}
   checkpointText: {fileID: 295178177}
   isFirst: 0
